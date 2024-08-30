@@ -55,7 +55,7 @@ void UserController::createUser(const crow::request& req, crow::response& res){
 
         }else {
             res.code = 500;
-            rs.write("database error");
+            res.write("database error");
             
         }
         
