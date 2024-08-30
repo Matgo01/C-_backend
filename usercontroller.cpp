@@ -33,7 +33,7 @@ void UserController::addRoutes(crow::SimpleApp& app){
 
 }
 
-void UserController::createUser(const creow::request& req, crow::response& res){
+void UserController::createUser(const crow::request& req, crow::response& res){
     try{
         auto json = crow::json::load(req.body);
         if(!json){
