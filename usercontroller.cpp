@@ -7,10 +7,11 @@
 UserController::UserController(Database& database) : db(database){}
 
 void UserController::addRoutes(crow::SimpleApp& app){
-    CROW_ROUTE(app, "/user/create").methods(crow::HTTPMethod::Post)([this])(const crow::request& req){
+    CROW_ROUTE(app, "/user/create").methods(crow::HTTPMethod::Post)([this](const crow::request& req){
         crow::response res;
         createUser(req, res);
         return res;
+     });
 
     CROW_ROUTE(app, "/user/<int>").methods(crow::HTTPMethod::Get)([this](const crow::request& req, int userId) {
         crow::response res;
